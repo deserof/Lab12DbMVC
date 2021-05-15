@@ -102,8 +102,8 @@ namespace laba12.Services
 
         public void UpdateEmployee(Employee model)
         {
-            string sqlExpression = $"UPDATE EmployeesCopy SET FirstName = '{model.FirstName}', LastName = {model.LastName}, MiddleName = " +
-                $"{model.LastName}, Adress = {model.Address}, Phone = {model.Phone}" +
+            string sqlExpression = $"UPDATE EmployeesCopy SET FirstName = '{model.FirstName}', LastName = '{model.LastName}', MiddleName = " +
+                $"'{model.MiddleName}', Adress = '{model.Address}', Phone = '{model.Phone}'" +
                 $"WHERE Employee_Id = {model.Id}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

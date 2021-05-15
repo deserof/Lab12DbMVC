@@ -54,7 +54,7 @@ namespace laba12.Services
 
         public void UpdateDepartment(Department model)
         {
-            string sqlExpression = $"UPDATE DepartmentsCopy SET Adress = '{model.Address}', CreatedTime = {model.CreatedDate} " +
+            string sqlExpression = $"UPDATE DepartmentsCopy SET Adress = '{model.Address}', CreatedTime = '{model.CreatedDate}' " +
                 $"WHERE Department_Id = {model.Id}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

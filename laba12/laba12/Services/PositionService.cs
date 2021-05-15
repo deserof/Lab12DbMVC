@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using laba12.Models;
 using System.Data.SqlClient;
+using System.Diagnostics.CodeAnalysis;
 
 namespace laba12.Services
 {
@@ -36,8 +37,25 @@ namespace laba12.Services
 
                 reader.Close();
 
+                //getPositionsList.Sort(Compare);
+
                 return getPositionsList;
             }
+        }
+
+        private int Compare(Position x, Position y)
+        {
+            if (x.Id > y.Id)
+            {
+                return 1;
+            }
+
+            if (x.Id < y.Id)
+            {
+                return -1;
+            }
+
+            return 0;
         }
 
         public void InsertPosition(Position model)
