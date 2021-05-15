@@ -16,7 +16,7 @@ namespace laba12.Services
         public IEnumerable<Position> GetPositionsList()
         {
             List<Position> getPositionsList = new List<Position>();
-            string sqlExpression = "SELECT * FROM PositionsCopy";
+            string sqlExpression = "SELECT * FROM PositionsCopy ORDER BY Position_Id";
 
             using (SqlConnection connect = new SqlConnection(connectionString))
             {
@@ -37,25 +37,8 @@ namespace laba12.Services
 
                 reader.Close();
 
-                //getPositionsList.Sort(Compare);
-
                 return getPositionsList;
             }
-        }
-
-        private int Compare(Position x, Position y)
-        {
-            if (x.Id > y.Id)
-            {
-                return 1;
-            }
-
-            if (x.Id < y.Id)
-            {
-                return -1;
-            }
-
-            return 0;
         }
 
         public void InsertPosition(Position model)

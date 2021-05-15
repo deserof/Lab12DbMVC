@@ -14,7 +14,7 @@ namespace laba12.Services
         public IEnumerable<Employee> GetEmployeesList()
         {
             List<Employee> getEmployeesList = new List<Employee>();
-            string sqlExpression = "SELECT * FROM EmployeesCopy";
+            string sqlExpression = "SELECT * FROM EmployeesCopy ORDER BY Employee_Id";
 
             using (SqlConnection connect = new SqlConnection(connectionString))
             {

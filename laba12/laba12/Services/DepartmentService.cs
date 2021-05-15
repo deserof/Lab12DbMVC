@@ -14,7 +14,7 @@ namespace laba12.Services
         public IEnumerable<Department> GetDepartmentsList()
         {
             List<Department> getDepartmentsList = new List<Department>();
-            string sqlExpression = "SELECT * FROM DepartmentsCopy";
+            string sqlExpression = "SELECT * FROM DepartmentsCopy ORDER BY Department_Id";
 
             using (SqlConnection connect = new SqlConnection(connectionString))
             {
